@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Ganpatipule Mandir | Beach Temple & Tourist Guide</title>
+    <!-- Google Fonts & simple CSS reset -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fefaf5;
+            color: #2e241f;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header / navbar */
+        header {
+            background: #fff8f0;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .logo a {
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #c26e2c;
+            letter-spacing: -0.3px;
+        }
+        .logo span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #b46f3a;
+            display: inline-block;
+            margin-left: 6px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #4a3729;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #c26e2c;
+            border-bottom: 2px solid #c26e2c;
+            padding-bottom: 4px;
+        }
+
+        /* hero section */
+        .hero {
+            background: linear-gradient(107deg, #fff2e6 0%, #ffe6d5 100%);
+            padding: 60px 0 70px;
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 48px;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #aa4e1c;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #4f3a2c;
+            max-width: 550px;
+            margin-bottom: 28px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #c26e2c;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .btn:hover {
+            background-color: #a4581f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+        }
+        .hero-image {
+            flex: 0.9;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.2);
+        }
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s;
+        }
+        .hero-image img:hover {
+            transform: scale(1.02);
+        }
+
+        /* info cards section (quick facts) */
+        .quick-info {
+            padding: 60px 0 40px;
+            background: white;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 48px;
+            color: #3a2a1f;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #c26e2c;
+            margin: 14px auto 0;
+            border-radius: 4px;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            justify-content: center;
+        }
+        .card {
+            background: #fffaf5;
+            border-radius: 28px;
+            padding: 28px 24px;
+            text-align: center;
+            flex: 1 1 220px;
+            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.08);
+            transition: all 0.2s;
+            border: 1px solid #ffefdf;
+        }
+        .card i {
+            font-size: 2.5rem;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+        .card h3 {
+            font-size: 1.6rem;
+            color: #c26e2c;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #5f4a38;
+            font-size: 0.95rem;
+        }
+
+        /* about + temple details */
+        .about-temple {
+            padding: 60px 0;
+            background: #fff6ef;
+        }
+        .two-col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #a55625;
+        }
+        .about-text p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            color: #2f241e;
+        }
+        .about-img {
+            flex: 0.9;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 16px 28px -12px rgba(0,0,0,0.15);
+        }
+        .about-img img {
+            width: 100%;
+            display: block;
+        }
+
+        /* attractions & highlights */
+        .attractions {
+            padding: 60px 0;
+            background: white;
+        }
+        .grid-attractions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .att-card {
+            background: #fef7f0;
+            border-radius: 28px;
+            width: 280px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+        }
+        .att-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+        .att-card h4 {
+            padding: 18px 18px 6px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #aa531f;
+        }
+        .att-card p {
+            padding: 0 18px 20px;
+            color: #5e4533;
+            font-size: 0.9rem;
+        }
+
+        /* visitor info section */
+        .visitor-info {
+            background: #f9ede2;
+            padding: 60px 0;
+        }
+        .info-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+        .info-box {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 26px;
+            flex: 1 1 260px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+            border: 1px solid #ffe1cc;
+        }
+        .info-box h3 {
+            font-size: 1.7rem;
+            margin-bottom: 18px;
+            color: #ba6a2c;
+            font-weight: 600;
+        }
+        .info-box ul, .info-box p {
+            color: #2f241f;
+            line-height: 1.6;
+        }
+        .info-box li {
+            margin-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        /* gallery simple */
+        .gallery {
+            padding: 60px 0;
+            background: #fffcf8;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 22px -12px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: 0.4s;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.03);
+        }
+
+        /* image replacement guide box */
+        .image-guide {
+            background: #fff1e4;
+            border-radius: 20px;
+            padding: 20px 28px;
+            margin: 30px auto 0;
+            border-left: 6px solid #c26e2c;
+            max-width: 900px;
+        }
+        .image-guide h4 {
+            color: #aa4e1c;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+        .image-guide p, .image-guide code {
+            font-size: 0.9rem;
+            color: #4a3729;
+        }
+        .image-guide code {
+            background: #f1e4d8;
+            padding: 3px 6px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* footer */
+        footer {
+            background: #2b231d;
+            color: #e9dbcf;
+            padding: 48px 0 28px;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+        .footer-logo h3 {
+            font-size: 1.8rem;
+            color: #e29f62;
+        }
+        .footer-links p, .footer-contact p {
+            margin: 8px 0;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 28px;
+            border-top: 1px solid #4f3a2b;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 780px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .section-title {
+                font-size: 1.9rem;
+            }
+            .container {
+                padding: 0 20px;
+            }
+        }
+        .emoji-icon {
+            font-size: 2.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="#">Ganpatipule<span>Mandir</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#attractions">Highlights</a></li>
+                <li><a href="#info">Visitor Info</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Ganpatipule Mandir<br>Serenity by the Sea</h1>
+                    <p>One of Maharashtra's most revered Ganesha temples, sitting on the pristine Konkan coast. White sands, ancient deity, and spiritual bliss await.</p>
+                    <a href="#info" class="btn">Plan Your Visit →</a>
+                </div>
+                <div class="hero-image">
+                    <img id="heroImg" src="https://www.trawell.in/admin/images/upload/520468440Ganpatipule_Temple.jpg" alt="Ganpatipule Temple Main View">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info Cards -->
+    <section class="quick-info">
+        <div class="container">
+            <h2 class="section-title">Sacred & Scenic</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="emoji-icon">🏛️</div>
+                    <h3>400+ Years</h3>
+                    <p>Historic temple since 16th century</p>
+                </div>
+                <div class="card">
+                    <div class="emoji-icon">🌊</div>
+                    <h3>Beach Temple</h3>
+                    <p>Only Ganesh temple on a beach in Maharashtra</p>
+                </div>
+                <div class="card">
+                    <div class="emoji-icon">🔱</div>
+                    <h3>Swayambhu</h3>
+                    <p>Self-manifested idol of Lord Ganesha</p>
+                </div>
+                <div class="card">
+                    <div class="emoji-icon">⛱️</div>
+                    <h3>Clean & Calm</h3>
+                    <p>Blue Flag beach, pristine surroundings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About + Temple details with Lord Ganpati image -->
+    <section id="about" class="about-temple">
+        <div class="container">
+            <div class="two-col">
+                <div class="about-text">
+                    <h2>🏝️ The Legend of Ganpatipule & Lord Ganpati</h2>
+                    <p>According to local lore, Lord Ganesha emerged from the earth to bless the devotees. The temple is known for its unique east-facing idol, while most Ganesh idols face north. The deity’s trunk turns to the left, a rare and sacred form of <strong>Lord Ganpati</strong>.</p>
+                    <p>The temple complex sits right on the edge of the Arabian Sea — you can hear the waves while offering prayers. Surrounded by lush hills and soft white sands, it’s a perfect blend of devotion and natural beauty. The annual “Ganesh Chaturthi” and “Maghi Ganesh Jayanti” draw thousands of pilgrims.</p>
+                    <p>Beyond spirituality, the area offers scenic walks, local Konkani cuisine, and a peaceful retreat away from city chaos. The 350-year-old temple also has a small museum displaying antique idols and artifacts.</p>
+                </div>
+                <div class="about-img">
+                    <img id="ganpatiImg" src="https://ganpatipule.co.in/UploadedImages/20231719143471.jpg" alt="Lord Ganpati Idol at Ganpatipule Mandir">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions & Highlights -->
+    <section id="attractions" class="attractions">
+        <div class="container">
+            <h2 class="section-title">✨ Must-See Highlights</h2>
+            <div class="grid-attractions">
+                <div class="att-card">
+                    <img id="beachImg" src="https://tse1.mm.bing.net/th/id/OIP.ivt_mmVtx4k33NTMfCd2XgHaEH?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Ganpatipule Beach View">
+                    <h4>Ganpatipule Beach</h4>
+                    <p>Crescent-shaped, cleanest beach with soft sand, ideal for sunset walks and photography. Swimming safe, and shallow waters.</p>
+                </div>
+                <div class="att-card">
+                    <img id="templeArchImg" src="https://www.trawell.in/admin/images/upload/520468440Ganpatipule_Temple.jpg" alt="Ancient Temple Architecture">
+                    <h4>Ancient Architecture</h4>
+                    <p>Stone-carved walls, wooden sanctum, and intricate carvings. One of the few temples with Konkani-style shikhara.</p>
+                </div>
+                
+                <div class="att-card">
+                    <img id="foodImg" src="https://tse4.mm.bing.net/th/id/OIP.eM3ioP67WHKbFkoEJrBUdQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Malvani Cuisine">
+                    <h4>Coastal Flavours</h4>
+                    <p>Fresh seafood, authentic Malvani curry, and ‘Ganpati special modaks’ sold near temple. Don't miss!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visitor Information -->
+    <section id="info" class="visitor-info">
+        <div class="container">
+            <h2 class="section-title">📋 Travel Guide</h2>
+            <div class="info-flex">
+                <div class="info-box">
+                    <h3>🕍 Temple Timings</h3>
+                    <ul>
+                        <li>Morning: 5:00 AM – 12:00 PM</li>
+                        <li>Evening: 4:00 PM – 9:00 PM</li>
+                        <li>Aarti: 7:30 AM & 7:30 PM (must attend)</li>
+                        <li>Open all days, special darshan on festivals.</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>🗓️ Best Time to Visit</h3>
+                    <ul>
+                        <li>October – February: Pleasant weather, clear skies</li>
+                        <li>Monsoon (July–Sept): Lush greenery but heavy rains</li>
+                        <li>Avoid extreme summers (March–May) – humid</li>
+                        <li>Ganesh Chaturthi (Aug/Sep) is grand but crowded.</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>🚗 How to Reach</h3>
+                    <ul>
+                        <li><strong>By Air:</strong> Ratnagiri Airport (48km) or Kolhapur (140km).</li>
+                        <li><strong>By Rail:</strong> Nearest railway – Ratnagiri (32km), well-connected.</li>
+                        <li><strong>By Road:</strong> MSRTC & private buses from Mumbai, Pune, Ratnagiri. Direct taxis available.</li>
+                        <li><strong>Self Drive:</strong> Coastal Highway (NH66) scenic route.</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>🏨 Accommodation</h3>
+                    <p>MTDC resort just next to temple, homestays, budget lodges & luxury beach resorts. Booking advisable in season.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">📸 Glimpses of Paradise</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img id="gallery1" src="https://i0.wp.com/azureskyfollows.com/wp-content/uploads/2018/02/18.jpeg?resize=960%2C640" alt="Sunset at Ganpatipule">
+                </div>
+                <div class="gallery-item">
+                    <img id="gallery2" src="https://www.greenleaftheresort.com/blog/wp-content/uploads/2024/11/Ganpatipule-Temple.jpg" alt="Temple with Arabian Sea">
+                </div>
+                
+            </div>
+            
+            <!-- Simple guide to replace images -->
+            
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>Ganpatipule Mandir</h3>
+                <p>Devotion • Peace • Coastal Heritage</p>
+            </div>
+            <div class="footer-links">
+                <p><strong>Explore</strong></p>
+                <p>🏛️ Temple History</p>
+                <p>🌊 Beach & Nature</p>
+                <p>🗺️ Nearby Pilgrimage</p>
+            </div>
+            <div class="footer-contact">
+                <p><strong>Contact & Info</strong></p>
+                
+                <p>📍 Ganpatipule, Ratnagiri District, Maharashtra - 415615</p>
+                <p>✉️ https://ganpatipule.co.in/</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>  Dedicated to Lord Ganesha | For travelers & devotees</p>
+            <p style="margin-top: 8px; font-size: 0.75rem;">🙏 Ganpati bapa morya!</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    (function() {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-links a");
+        function updateActiveNav() {
+            let current = "";
+            const scrollPos = window.scrollY + 120;
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    current = section.getAttribute("id");
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                const href = link.getAttribute("href").substring(1);
+                if(href === current) {
+                    link.classList.add("active");
+                }
+            });
+        }
+        window.addEventListener("scroll", updateActiveNav);
+        window.addEventListener("load", updateActiveNav);
+    })();
+</script>
+</body>
+</html>
